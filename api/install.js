@@ -84,7 +84,7 @@ module.exports = async function handler(req, res) {
     <span class="emoji">🥠</span>
     <h1>Fortune Cookie</h1>
     <p class="tagline">
-      A daily fortune for women at work.<br/>
+      A daily spark for everyone at work.<br/>
       Type <strong>/fortunecookie</strong> whenever you need one.
     </p>
     <div class="fortune-preview">
