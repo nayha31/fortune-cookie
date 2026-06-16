@@ -5,10 +5,11 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
-  const response_url = req.body?.response_url;
   const fortune = getRandomFortune();
+  const fortuneText = fortune.author
+    ? `_"${fortune.text}"_\n— ${fortune.author}`
+    : `_${fortune.text}_`;
 
-  // Send fortune directly — fastest possible response
   return res.status(200).json({
     response_type: "ephemeral",
     blocks: [
@@ -16,7 +17,7 @@ module.exports = async function handler(req, res) {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `🥠  *Your fortune:*\n\n_${fortune.text}_`,
+          text: `🥠  *Your fortune:*\n\n${fortuneText}`,
         },
       },
     ],
