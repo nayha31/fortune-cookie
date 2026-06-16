@@ -7,8 +7,8 @@ module.exports = async function handler(req, res) {
 
   const fortune = getRandomFortune();
   const fortuneText = fortune.author
-    ? `_"${fortune.text}"_\n— ${fortune.author}`
-    : `_${fortune.text}_`;
+    ? `"${fortune.text}"\n— ${fortune.author}`
+    : fortune.text;
 
   return res.status(200).json({
     response_type: "ephemeral",
@@ -17,7 +17,7 @@ module.exports = async function handler(req, res) {
         type: "section",
         text: {
           type: "mrkdwn",
-          text: `🥠  *Your fortune:*\n\n${fortuneText}`,
+          text: `🥠\n\n_${fortuneText}_`,
         },
       },
     ],
