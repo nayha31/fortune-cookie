@@ -26,10 +26,7 @@ module.exports = async function handler(req, res) {
             text: `🥠  *Your fortune:*\n\n_${fortune.text}_`,
           },
         },
-        {
-          type: "context",
-          elements: [{ type: "mrkdwn", text: fortune.cat }],
-        },
+    
       ],
     }),
   });
