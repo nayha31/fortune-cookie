@@ -1,0 +1,16 @@
+{
+  "name": "fortunecookie-slack-bot",
+  "version": "1.0.0",
+  "description": "A /fortunecookie slash command for women at work",
+  "main": "api/fortunecookie.js",
+  "scripts": {
+    "dev": "vercel dev"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
